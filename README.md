@@ -1,6 +1,6 @@
-#Ft_bistromatic
+# Ft_bistromatic
 
-###Goals
+### Goals
 
 The goal of the porject is to write a program able to display the result of the  
 of an arithmetic expression composed of numbers with infinite size expressed in  
