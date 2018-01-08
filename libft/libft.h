@@ -6,7 +6,7 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 13:53:11 by ckrommen          #+#    #+#             */
-/*   Updated: 2017/10/03 13:38:15 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/01/08 13:44:51 by leopoldoh        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <string.h>
+# include <sys/types.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 typedef	struct	s_list
 {
