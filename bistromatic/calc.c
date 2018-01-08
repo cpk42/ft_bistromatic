@@ -32,7 +32,7 @@ int check_brackets(char *format)
 
 void	ft_calc(char *av1, char *av2)
 {
-  ft_putstr("here");
+  
 }
 
 int main(int argc, char **argv)
