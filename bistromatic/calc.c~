@@ -32,7 +32,11 @@ int check_brackets(char *format)
 
 void	ft_calc(char *av1, char *av2)
 {
+<<<<<<< HEAD:bistromatic/calc.c
+  
+=======
     ft_putstr("here");
+>>>>>>> a02004c59f1b18c28aeab66007488dc16a3dec68:calc.c
 }
 
 int main(int argc, char **argv)
