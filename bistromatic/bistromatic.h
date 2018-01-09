@@ -9,12 +9,13 @@
 # define RPAREN )
 # define LPAREN (
 
-
-#typedef struct s_stack
+typedef struct s_stack
 {
-	void *data;
-	struct s_statck *next;
-}				
+	char	data[1024];
+	int	prec;
+	struct	s_stack  *next;
+}		t_stack;
+
 # include "./libft/libft.h"
 # include <stdio.h>
 #endif
