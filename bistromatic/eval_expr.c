@@ -6,11 +6,11 @@
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 12:54:30 by ckrommen          #+#    #+#             */
-/*   Updated: 2018/01/09 12:54:33 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/01/09 14:00:37 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "bistromatic.h"
 
 char		*suppr_spaces(char *str)
 {
@@ -20,17 +20,24 @@ char		*suppr_spaces(char *str)
 
 	i = 0;
 	j = 0;
-	str2 = ft_strnew(ft_strlen(str));
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
+			j++;
+		i++;
+	}
+	i = 0;
+	j = 0;
+	str2 = ft_strnew(j);
+	while (str[i])
+	{
+		if (str[i] != ' ')
 		{
-			str2[j] = str[i];
+			str[j] = str[i];
 			j++;
 		}
 		i++;
 	}
-	ft_strdel(str);
 	str2[j] = '\0';
 	return (str2);
 }
@@ -42,9 +49,9 @@ int			ft_parse_nbr(char **ps)
 
 	nbr = 0;
 	sign = 1;
-	if ((*ps)[0] == PLUS || (*ps)[0] == MINUS)
+	if ((*ps)[0] == '+' || (*ps)[0] == '-')
 	{
-		if ((*ps)[0] == MINUS)
+		if ((*ps)[0] == '-')
 			sign = -1;
 		*ps = *ps + 1;
 	}
@@ -71,11 +78,11 @@ int			handle_arith(char **ps)
 	char	op;
 
 	lhs = ft_parse_nbr(ps);
-	while ((*ps)[0] != '\0' && (*ps)[0] != RPAREN)
+	while ((*ps)[0] != '\0' && (*ps)[0] != ')')
 	{
 		op = (*ps)[0];
 		*ps = *ps + 1;
-		if (op == PLUS || op == MINUS)
+		if (op == '+' || op == '-')
 			rhs = handle_oper(ps);
 		else
 			rhs = ft_parse_nbr(ps);
@@ -91,7 +98,7 @@ int			handle_oper(char **ps)
 	char	op;
 
 	lhs = ft_parse_nbr(ps);
-	while ((*ps)[0] == MULT || (*ps)[0] == DIVIDE || (*ps)[0] == MODULO)
+	while ((*ps)[0] == '*' || (*ps)[0] == '/' || (*ps)[0] == '%')
 	{
 		op = (*ps)[0];
 		*ps = *ps + 1;
@@ -103,8 +110,8 @@ int			handle_oper(char **ps)
 
 int			eval_expr(char *str)
 {
-	str = suppr_spaces(str);
 	if (str[0] == '\0')
 		return (0);
+	str = suppr_spaces(str);
 	return (handle_arith(&str));
 }

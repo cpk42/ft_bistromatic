@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   do_op.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kvandenb <kvandenb@student.42.us.org>      +#+  +:+       +#+        */
+/*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/16 14:13:13 by kvandenb          #+#    #+#             */
-/*   Updated: 2017/07/16 14:13:15 by kvandenb         ###   ########.fr       */
+/*   Created: 2018/01/09 13:35:22 by ckrommen          #+#    #+#             */
+/*   Updated: 2018/01/09 13:35:24 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "bistromatic.h"
 
 int	do_op(int lhs, int rhs, char op)
 {
