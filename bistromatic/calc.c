@@ -49,7 +49,7 @@ t_stack	*create_elem(char *data)
 
 void	push(t_stack *stack, t_stack *elem)
 {
-  t_stack *ptr;
+  t_stack	*ptr;
 
   ptr = stack;
   while (ptr->next)
@@ -59,8 +59,8 @@ void	push(t_stack *stack, t_stack *elem)
 
 t_stack *pop(t_stack *stack)
 {
-  t_stack *ptr;
-  t_stack *elem;
+  t_stack	*ptr;
+  t_stack	*elem;
 
   ptr = stack;
   while (ptr->next->next)
@@ -84,6 +84,51 @@ void	handle_value(char *str, int i, t_stack *val)
   return (i);
 }
 
+int	do_op(char *p1, char *p2, char oper)
+{
+  int x;
+  int y;
+
+  x = ft_atoi(p1);
+  y = ft_atoi(p2);
+  if (oper == PLUS)
+    return (x + y);
+  else if (oper == MINUS)
+    return (x - y);
+  else if (oper == MULT)
+    return (x * y);
+  else if (oper == DIVIDE)
+    return (x / y);
+  else if (oper == MODULO)
+    return (x % y);
+  else
+    return (-1);
+}
+
+void	handle_rparen(t_stack *op, t_stack *val)
+{
+  t_stack	*p1;
+  t_stack	*p2;
+  t_stack	*oper;
+  int		res;
+  char		*mem;
+
+  while (op->data[0] != LPAREN)
+    {
+      oper = pop(op);
+      p1 = pop(val);
+      p2 = pop(val);
+      res = do_op(p1->data, p2->data, *oper->data);
+      free(p1);
+      free(p2);
+      free(oper);
+      mem = ft_itoa(res);
+      push(val, create_elem(mem));
+      ft_strdel(mem);
+    }
+  if (op->data)
+}
+
 int	expr_parse(char *str, t_stack *op, t_stack *val)
 {
   //  char str[1024];
@@ -93,15 +138,19 @@ int	expr_parse(char *str, t_stack *op, t_stack *val)
   while (str[i])
     {
       ft_bzero(buf, 1024);
-      if (isnum(*str))
+      if (ft_isnum(str[i]))
 	i = handle_value(str, i, val);
+      else if (str[i] == LPAREN)
+	push(op, x)
       else if (str[i] == '32')
 	 ;
       else if (str[i] == RPAREN)
-	handle_rparen();
-      else if (str[i] == PLUS || str[i] == MINUS || str[i] == MODULO || str[i] == MULT || str[i] == DIVIDE)
-	handle_op()
-	
+	handle_rparen(op, val);
+      else if (str[i] == PLUS || str[i] == MINUS || str[i] == MODULO ||
+	       str[i] == MULT || str[i] == DIVIDE)
+	handle_op(str, i , );
+      else
+	return (-1);
     }
 }
 
