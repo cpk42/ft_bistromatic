@@ -1,13 +1,13 @@
-# Ft_bistromatic
+# Eval_Expr
+A simple recursive decent function that I made on my 3rd week of learning C.
 
-### Goals
+## Instructions
+make all
 
-The goal of the porject is to write a program able to display the result of the  
-of an arithmetic expression composed of numbers with infinite size expressed in  
-any base, if GNU's bc can handle the size, the program should too.  
+make clean
 
-### Check of List
-*Makefile  
-*authorfile  
-*parser  
+./eval_expr "[input mathematical equation]"
 
+### Example
+
+./eval_expr "3 + 4 * ( 2 + 6) / 8 % 2"

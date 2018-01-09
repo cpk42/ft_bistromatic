@@ -1,4 +1,16 @@
-#include "bistro.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calc.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/01/09 12:56:35 by ckrommen          #+#    #+#             */
+/*   Updated: 2018/01/09 13:01:20 by ckrommen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "bistromatic.h"
 
 int bra_char(char c)
 {
@@ -30,9 +42,10 @@ int check_brackets(char *format)
     return (total);
 }
 
-void	ft_calc(char *av1, char *av2)
+void	calc(char *av1, char *av2)
 {
-    ft_putstr("here");
+	ft_putnbr(eval_expr(av1));
+	ft_putchar('\n');
 }
 
 int main(int argc, char **argv)
@@ -40,7 +53,7 @@ int main(int argc, char **argv)
     if (argc != 3)
         ft_putendl("usage: ./calc base input_size");
     else
-        ft_calc(argv[1], argv[2]);
+        calc(argv[1], argv[2]);
 }
 
 
