@@ -6,7 +6,7 @@
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 12:56:35 by ckrommen          #+#    #+#             */
-/*   Updated: 2018/01/09 14:37:26 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/01/09 14:47:43 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,4 @@ int main(int argc, char **argv)
         ft_putendl("usage: ./calc base input_size");
     else
         calc(argv[1], argv[2]);
-
-//	while (1)
-//		 ;
 }
-
-
