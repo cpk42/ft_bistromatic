@@ -6,7 +6,7 @@
 #    By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/01/09 12:59:02 by ckrommen          #+#    #+#              #
-#    Updated: 2018/01/09 14:24:41 by ckrommen         ###   ########.fr        #
+#    Updated: 2018/01/09 13:42:53 by ckrommen         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -34,7 +34,6 @@ all: $(NAME)
 
 clean:
 	@echo "Cleaning up"
-	@ rm -rf $(NAME)
 	@make -C $(LIBFT) clean
 
 fclean: clean

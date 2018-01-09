@@ -6,27 +6,11 @@
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 12:54:30 by ckrommen          #+#    #+#             */
-/*   Updated: 2018/01/09 14:36:54 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/01/09 14:00:37 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bistromatic.h"
-
-int	count_spaces(char *str)
-{
-	int i;
-	int j;
-
-	j = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == ' ')
-			j++;
-		i++;
-	}
-	return (j);
-}
 
 char		*suppr_spaces(char *str)
 {
@@ -36,12 +20,20 @@ char		*suppr_spaces(char *str)
 
 	i = 0;
 	j = 0;
-	str2 = ft_strnew(ft_strlen(str) - count_spaces(str));
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')
+			j++;
+		i++;
+	}
+	i = 0;
+	j = 0;
+	str2 = ft_strnew(j);
+	while (str[i])
+	{
+		if (str[i] != ' ')
 		{
-			str2[j] = str[i];
+			str[j] = str[i];
 			j++;
 		}
 		i++;
@@ -118,8 +110,8 @@ int			handle_oper(char **ps)
 
 int			eval_expr(char *str)
 {
-	str = suppr_spaces(str);
 	if (str[0] == '\0')
 		return (0);
+	str = suppr_spaces(str);
 	return (handle_arith(&str));
 }

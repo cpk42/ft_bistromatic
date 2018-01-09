@@ -6,7 +6,7 @@
 /*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 12:56:35 by ckrommen          #+#    #+#             */
-/*   Updated: 2018/01/09 14:37:26 by ckrommen         ###   ########.fr       */
+/*   Updated: 2018/01/09 13:52:21 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ int check_brackets(char *format)
 void	calc(char *av1, char *av2)
 {
 	ft_putnbr(eval_expr(av1));
-	ft_putchar('\n');
-	ft_putchar(*av2);
+//	ft_putchar(*av2);
 	ft_putchar('\n');
 }
 
@@ -55,8 +54,8 @@ int main(int argc, char **argv)
     else
         calc(argv[1], argv[2]);
 
-//	while (1)
-//		 ;
+	while (1)
+		 ;
 }
 
 
