@@ -6,7 +6,7 @@
 /*   By: lhernand <lhernand@student.42.us.org>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/09 20:00:02 by lhernand          #+#    #+#             */
-/*   Updated: 2018/01/09 21:39:55 by lhernand         ###   ########.fr       */
+/*   Updated: 2018/01/10 13:52:02 by leopoldoh        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void					print_usage(int exit_code)
 	exit(exit_code);
 }
 
-t_stack					*create_elem(char n, char op, int sign, int carry)
+t_stack					*create(char n, char op, int sign, int carry)
 {
 	t_stack	*head;
 
@@ -53,20 +53,20 @@ void					push(t_stack **list, char n, char op, int sign, int c)
 
 	if (*list)
 	{
-		node = list;
+		node = *list;
 		while (node->next)
 			node = node->next;
 		if (is_operand(op))
-			create(NULL, op, sign, c);
+			create('\0', op, sign, c);
 		else
-			create(n, NULL, sign, c);
+			create(n, '\0', sign, c);
 	}
 	else
 	{
 		if (is_operand(op))
-			*list = create(NULL, op, sign, c);
+			*list = create('\0', op, sign, c);
 		else
-			*list = create(n, NULL, sign, c);
+			*list = create(n, '\0', sign, c);
 	}
 }
 
@@ -75,17 +75,19 @@ void					print(t_stack **list)
 	t_stack *node;
 
 	node = *list;
-	while (node->next)
+	while (node)
 	{
-		ft_putchar(n);
+		ft_putchar(node->num);
 		ft_putchar('\n');
-		ft_putchar(op);
+		ft_putchar(node->op);
 		ft_putchar('\n');
-		ft_putnbr(sign);
+		ft_putnbr(node->sign);
 		ft_putchar('\n');
-		ft_putnbr(c);
+		ft_putnbr(node->carry);
 		ft_putchar('\n');
+        node = node->next;
 	}
+
 }
 
 /*
@@ -99,7 +101,7 @@ int						main(int argc, char **argv)
 {
 	int ret;
 	char *buff;
-	char *list; 
+	t_stack *list; 
 	int  i;
 
 	i = 0;
@@ -112,12 +114,14 @@ int						main(int argc, char **argv)
 		ret = read(0, buff, ft_atoi(argv[2]));
 		if (ret != 0)
 		{
-			ft_putstr(buff);
+			//ft_putstr(buff);
 			while (i < ft_atoi(argv[2]))
 			{
 				push(&list, buff[i], buff[i], 1, 1);
+                ft_putchar(buff[i]);
 				i++;
 			}
+            ft_putstr("it's printing");
 			print(&list);
 		}
 		else
