@@ -1,5 +1,16 @@
-#ifndef BISTROMATIC_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bistromatic.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/01/09 12:40:54 by ckrommen          #+#    #+#             */
+/*   Updated: 2018/01/09 14:46:21 by ckrommen         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#ifndef BISTROMATIC_H
 # define BISTROMATIC_H
 # define PLUS +
 # define MINUS -
@@ -9,13 +20,15 @@
 # define RPAREN )
 # define LPAREN (
 
-typedef struct s_stack
-{
-	char	data[1024];
-	int	prec;
-	struct	s_stack  *next;
-}		t_stack;
-
+# include <unistd.h>
+# include <stdlib.h>
 # include "./libft/libft.h"
-# include <stdio.h>
+
+int		do_op(int lhs, int rhs, char op);
+char	*suppr_spaces(char *str);
+int		ft_parse_nbr(char **ps);
+int		handle_arith(char **ps);
+int		handle_oper(char **ps);
+int		eval_expr(char *str);
+
 #endif

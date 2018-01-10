@@ -6,7 +6,7 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 13:53:11 by ckrommen          #+#    #+#             */
-/*   Updated: 2018/01/08 13:44:51 by leopoldoh        ###   ########.fr       */
+/*   Updated: 2018/01/09 14:46:50 by ckrommen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <sys/types.h>
 # include <unistd.h>
-//# include "get_next_line.h"
 
 typedef	struct	s_list
 {
