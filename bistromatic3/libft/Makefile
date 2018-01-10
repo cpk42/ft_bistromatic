@@ -6,7 +6,7 @@
 #    By: ckrommen <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/09/18 15:04:53 by ckrommen          #+#    #+#              #
-#    Updated: 2018/01/08 13:56:37 by leopoldoh        ###   ########.fr        #
+#    Updated: 2018/01/09 18:09:44 by lhernand         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -21,7 +21,7 @@ ft_strsplit.c ft_itoa.c ft_putchar.c ft_putstr.c ft_putendl.c ft_putnbr.c \
 ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c \
 ft_lstpush.c ft_strsubcount.c ft_wordcount.c ft_isprime.c ft_iseven.c \
-get_next_line.c
+ft_numlength.c ft_itoa_base.c
 
 OBJS =ft_atoi.o ft_isascii.o ft_memccpy.o ft_memmove.o ft_strcmp.o ft_strlen.o \
 ft_strnstr.o ft_toupper.o ft_tolower.o ft_bzero.o ft_isdigit.o ft_memchr.o \
@@ -34,7 +34,7 @@ ft_strsplit.o ft_itoa.o ft_putchar.o ft_putstr.o ft_putendl.o ft_putnbr.o \
 ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o \
 ft_lstnew.o ft_lstdelone.o ft_lstdel.o ft_lstadd.o ft_lstiter.o ft_lstmap.o \
 ft_lstpush.o ft_strsubcount.o ft_wordcount.o ft_isprime.o ft_iseven.o \
-get_next_line.o
+ft_numlength.o ft_itoa_base.o
 
 FLAGS = -Wall -Wextra -Werror
 

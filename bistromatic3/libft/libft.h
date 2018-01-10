@@ -6,7 +6,7 @@
 /*   By: ckrommen <ckrommen@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 13:53:11 by ckrommen          #+#    #+#             */
-/*   Updated: 2018/01/08 13:44:51 by leopoldoh        ###   ########.fr       */
+/*   Updated: 2018/01/09 18:10:57 by lhernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <sys/types.h>
 # include <unistd.h>
-# include "get_next_line.h"
 
 typedef	struct	s_list
 {
@@ -89,5 +88,6 @@ t_list			*ft_lstpush(t_list*lst, void const *content, size_t
 							content_size);
 int				ft_isprime(int n);
 int				ft_iseven(int n);
-
+size_t			ft_numlength(int num, int base);
+char			*ft_itoa_base(int value, int base);
 #endif
